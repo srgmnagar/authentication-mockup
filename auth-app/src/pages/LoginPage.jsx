@@ -9,29 +9,27 @@ function LoginPage() {
   const [error, setError] = useState('')
   const navigate = useNavigate()
 
-  // Determine if the button should be disabled
   const isLoginButtonDisabled = !email || !password
 
   const handleLogin = (e) => {
     e.preventDefault()
     setError('')
 
-    // Retrieve user data from local storage
     const storedUsers = JSON.parse(localStorage.getItem('users')) || []
     const user = storedUsers.find(
       (u) => u.email === email && u.password === password
     )
 
     if (user) {
-      localStorage.setItem('currentUser', JSON.stringify(user)) // Store current logged-in user
-      navigate('/account-settings') // Navigate to account settings page upon successful login
+      localStorage.setItem('currentUser', JSON.stringify(user))
+      navigate('/account-settings')
     } else {
       setError('Invalid email or password.')
     }
   }
 
   return (
-    <div className="flex flex-col h-screen">
+    <div className="flex flex-col min-h-screen">
       <div className="p-6 pt-16 text-left flex-grow ">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}

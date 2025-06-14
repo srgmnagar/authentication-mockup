@@ -8,16 +8,30 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  background-color: #fafbfd; /* Reverted to light gray background */
+  background-color: #fafbfd;
 }
 
 #root {
-  max-width: 375px; /* Typical iPhone width */
-  margin: 0 auto; /* Center horizontally */
   width: 100%;
   min-height: 100vh;
-  background-color: #fcfcfc; /* Updated mobile app screen background */
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for device frame */
-  border-radius: 10px; /* Rounded corners for the app frame */
-  overflow: hidden; /* Hide overflow content */
+  background-color: #fcfcfc;
+  overflow: hidden;
+}
+
+@media (max-width: 639px) {
+  #root {
+    max-width: 100%;
+    margin: 0;
+    box-shadow: none;
+    border-radius: 0;
+  }
+}
+
+@media (min-width: 640px) {
+  #root {
+    max-width: 375px;
+    margin: 0 auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
 }

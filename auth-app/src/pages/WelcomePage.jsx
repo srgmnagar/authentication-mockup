@@ -6,7 +6,7 @@ function WelcomePage() {
   const navigate = useNavigate()
 
   return (
-    <div className="flex flex-col items-start justify-end h-screen p-6 text-center">
+    <div className="flex flex-col items-start justify-end min-h-screen p-6 text-center">
       <div className="mb-7">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}

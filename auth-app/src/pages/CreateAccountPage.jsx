@@ -34,7 +34,6 @@ function CreateAccountPage() {
       newErrors.email = 'Invalid email address.'
     }
     if (!formData.password) newErrors.password = 'Password is required.'
-    // Company Name is optional, no validation needed unless specified
 
     setErrors(newErrors)
     return Object.keys(newErrors).length === 0
@@ -59,7 +58,7 @@ function CreateAccountPage() {
   }
 
   return (
-    <div className="flex flex-col h-screen">
+    <div className="flex flex-col min-h-screen">
       <div className="p-6  text-left flex-grow">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
@@ -73,7 +72,7 @@ function CreateAccountPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="text-gray-400 text-semibold text-sm leading-relaxed mb-3"
+          className="text-gray-400 text-semibold text-sm leading-relaxed mb-3 mr-10"
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         </motion.p>
